@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{85D56364-2A46-48A6-A881-D33DB5B1D277}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solutionfolderwithfiles", "solutionfolderwithfiles", "{5A3BF47E-4D5E-45BE-8DCF-EE5AA2C90657}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solutionfolderwithprojects", "solutionfolderwithprojects", "{04528565-3C52-43EB-ABC2-7C0374406614}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NestedTestProject", "NestedTestProject\NestedTestProject.csproj", "{082B76CD-3D50-447F-9E29-F7C182F88FAF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nestedSolutionFolderWithProjects", "nestedSolutionFolderWithProjects", "{3C1321E9-D2C6-4BAC-819B-4AE852B9630C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeepNestedProject", "DeepNestedProject\DeepNestedProject.csproj", "{11C14BF2-808C-4455-B60D-B87E95D478F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		development|Any CPU = development|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85D56364-2A46-48A6-A881-D33DB5B1D277}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85D56364-2A46-48A6-A881-D33DB5B1D277}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85D56364-2A46-48A6-A881-D33DB5B1D277}.development|Any CPU.ActiveCfg = development|Any CPU
+		{85D56364-2A46-48A6-A881-D33DB5B1D277}.development|Any CPU.Build.0 = development|Any CPU
+		{85D56364-2A46-48A6-A881-D33DB5B1D277}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85D56364-2A46-48A6-A881-D33DB5B1D277}.Release|Any CPU.Build.0 = Release|Any CPU
+		{082B76CD-3D50-447F-9E29-F7C182F88FAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{082B76CD-3D50-447F-9E29-F7C182F88FAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{082B76CD-3D50-447F-9E29-F7C182F88FAF}.development|Any CPU.ActiveCfg = development|Any CPU
+		{082B76CD-3D50-447F-9E29-F7C182F88FAF}.development|Any CPU.Build.0 = development|Any CPU
+		{082B76CD-3D50-447F-9E29-F7C182F88FAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{082B76CD-3D50-447F-9E29-F7C182F88FAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11C14BF2-808C-4455-B60D-B87E95D478F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11C14BF2-808C-4455-B60D-B87E95D478F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11C14BF2-808C-4455-B60D-B87E95D478F9}.development|Any CPU.ActiveCfg = development|Any CPU
+		{11C14BF2-808C-4455-B60D-B87E95D478F9}.development|Any CPU.Build.0 = development|Any CPU
+		{11C14BF2-808C-4455-B60D-B87E95D478F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11C14BF2-808C-4455-B60D-B87E95D478F9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{082B76CD-3D50-447F-9E29-F7C182F88FAF} = {04528565-3C52-43EB-ABC2-7C0374406614}
+		{3C1321E9-D2C6-4BAC-819B-4AE852B9630C} = {5A3BF47E-4D5E-45BE-8DCF-EE5AA2C90657}
+		{11C14BF2-808C-4455-B60D-B87E95D478F9} = {3C1321E9-D2C6-4BAC-819B-4AE852B9630C}
+	EndGlobalSection
+EndGlobal

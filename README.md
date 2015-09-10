@@ -1,8 +1,8 @@
 # VSAutomate
 
 ## Summary
-VSAutomate is a template to help setup common conventions and configuration
-used across all deveopment projects. 
+VSAutomate is a sample project to help setup common conventions and configuration
+used across all deveopment projects using nuget and VS envDTE. 
 
 
 The sample tasks included in this package are
