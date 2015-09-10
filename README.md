@@ -1,33 +1,27 @@
-# VSAutomateFTW
+# VSAutomate
 
 ## Summary
-The VSAutomateFTW nuget package is intended to provide a template for the common setup across 
-all deveopment projects. The following items are managed by this package
+VSAutomate is a template to help setup common conventions and configuration
+used across all deveopment projects. 
 
-1. **Common folders** .build and .docs
-2. **Solution configurations** - development, staging and release
-3. **GlobalAssemblyInfo.cs** - A single globalassemblyinfo.cs file is added to the repo route. All projects use this file as a linked item and can override
-the name. The versioning will always be consistent across all repo projects by using this global assemblyinfo file
-2. **Stylecop** - each project folder has a settings.stylecop link document added which links back to a single config file per repo.
-It will be added if it doesn't exist and can be overridden as required.
-3. **Default.ruleset** - A code analysis ruleset that each project is configured to use. Overrides for errors can be placed in a globalsuppressions.cs file
-for each project. The ruleset will be added if it doesn't exist and can be overridden as required.  
-**By default this is always set to run in every build configuration and enforced, change as required**
-4. **Custom Dictionary** - Provides a user dictionary linked to each project to store common spellings and acronyms that otherwise would appear as spelling errors.
-5. **Config transforms** - Will create a nested config transform for each build configuration that exists in the solution if it doesn't exist. It also adds a transformation
-msbuild target that will tranform the config on build and copy it to the output directory. This is primarily used when running tests or debugging different configurations
 
-## Location
-Any files that are customisable are stored in the **.build** folder which is created if it doesn't exist
+The sample tasks included in this package are
 
+1. **Solutions folders** - set up those folders you use in every solution, defaults are .build and .docs
+2. **Solution configurations** - set up solution build configurations, defaults are development, staging and release
+3. **GlobalAssemblyInfo.cs** - adds a globalassemblyinfo.cs file and links all projects to it
+2. **Stylecop** - adds a solution stylecop.settings file and links all projects to it
+3. **Default.ruleset** - adds a solution code analysis ruleset and links all projects to it. By default always enabled codeanalysis to run on all projects for all configurations
+4. **Custom Dictionary** - adds a solution custom dictionary and links all projects to it
+5. **Config transforms** - adds config transform documents to all app.config files and configures the transforms to run on build
 
 ## Debugging
 
 To debug the package, take the following steps.
 
 1. build the solution in debug configuration
-2. open the testsolution in a second instance of visual studio
+2. open the testsolution.sln in a second instance of visual studio
 3. open the package manager console 
-4. create a local package feed pointing to the VSAutomate.Nugety folder
-5. install packe VSAutomate
+4. [click the cog] create a local package feed pointing to the VSAutomate.Nuget folder
+5. > install-pckage VSAutomate
 
