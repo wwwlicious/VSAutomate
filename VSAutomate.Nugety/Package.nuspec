@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>VSAutomate</id>
+    <version>0.0.0.1</version>
+    <title>MVSAutomate</title>
+    <authors>Scott Mackay</authors>
+    <owners>wwwlicious</owners>
+    <description>VSAutomate is a multi-purpose sample package to setup project defaults and standards for a solution</description>
+    <releaseNotes>
+    </releaseNotes>
+    <summary>Configures project defaults for a development and build pipeline</summary>
+    <language>en-US</language>
+    <projectUrl>https://nuget.org/packages/VSAutomate</projectUrl>
+    <iconUrl>https://nuget.org/Content/Images/packageDefaultIcon-50x50.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <copyright>Scott Mackay. All rights reserved 2015</copyright>
+    <dependencies>
+    </dependencies>
+    <references></references>
+    <tags>VSAutomate envDTE automation</tags>
+  </metadata>
+  <files>
+    <file src="tools\**\*.*" target="tools" />
+  </files>
+</package>

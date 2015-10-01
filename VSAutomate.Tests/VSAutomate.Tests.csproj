@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{08A3931F-885D-45C4-93C7-B2C515DA65A4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MacLean.MSBuild.Tests</RootNamespace>
+    <AssemblyName>MacLean.MSBuild.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\VSAutomateFTW\content\Default.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\VSAutomateFTW\content\Default.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Development|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Development\</OutputPath>
+    <DefineConstants>CODE_ANALYSIS;DEBUG;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>..\VSAutomateFTW\content\Default.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Staging|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Staging\</OutputPath>
+    <DefineConstants>CODE_ANALYSIS;DEBUG;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>..\VSAutomateFTW\content\Default.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!--Test setup for code inspect -->
+  <PropertyGroup>
+    <MSBuildAssemblyPath>$(OutDir)\MacLean.MSBuild.dll</MSBuildAssemblyPath>
+    <Path>d:\development\catalogue.services</Path>
+    <ReportPath>$(Path)\Reports</ReportPath>
+    <XUnitProjectFileName>Test.xunit</XUnitProjectFileName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Assemblies Include="$(Path)\**\bin\$(Configuration)\*.Tests.dll" />
+  </ItemGroup>
+  <!-- Test setup for filter list -->
+  <!--<UsingTask TaskName="MacLean.MSBuild.GetAssembliesByCompany" AssemblyFile="C:\Development\Branches\MacLean.MSBuild\postoctopusdeploy\MacLean.MSBuild\bin\Debug\MacLean.MSBuild.dll" />-->
+  <UsingTask TaskName="MacLean.MSBuild.TransformConfig" AssemblyFile="C:\Development\Branches\MacLean.MSBuild\postoctopusdeploy\MacLean.MSBuild\bin\Debug\MacLean.MSBuild.dll" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+    <!--<MacLean.MSBuild.TruncateNCoverTrend TrendFile="C:\Development\MacLean\MacLean.MSBuild\nCover\Default.trend" PreserveMonths="1" />-->
+    <!-- This is for testing the code inspect task -->
+    <!--<MacLean.MSBuild.CodeInspect Assemblies="@(Assemblies)" ReportFolder="$(ReportPath)" TestFolder="$(TestPath)" ReferencePaths="@(ReferencePaths)" />-->
+    <!--<MacLean.MSBuild.GetAssembliesByCompany FolderPath="$(MSBuildProjectDirectory)\" SearchPattern="*.*Tests.dll">
+      <Output TaskParameter="ListOfAssemblies" PropertyName="GetAssembliesByCompanyOutput">
+      </Output>
+    </MacLean.MSBuild.GetAssembliesByCompany>-->
+    <MacLean.MSBuild.TransformConfig ProjectPath="C:\Development\Catalogue.ImageManager\Catalogue.ImageManager" ConfigurationName="Release" TargetDir="$(TargetDir)" TargetFileName="$(TargetFileName)">
+    </MacLean.MSBuild.TransformConfig>
+    <!-- This is for testing the filter list task -->
+    <!--<MacLean.MSBuild.FilterList Source="@(Assemblies)" Filter=".tests.dll">
+			<Output TaskParameter="Output" ItemName="Test" />
+		</MacLean.MSBuild.FilterList>
+
+		<Message Text="All Items: %(Test.FileName) Match: %(Test.IsMatch)"/>-->
+  </Target>
+</Project>
