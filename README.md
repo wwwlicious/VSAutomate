@@ -2,7 +2,7 @@
 
 ## Summary
 VSAutomate is a sample project to help setup common conventions and configuration
-used across all deveopment projects using nuget and VS envDTE. 
+used across all development projects using nuget and VS envDTE. 
 
 
 The sample tasks included in this package are
@@ -23,5 +23,5 @@ To debug the package, take the following steps.
 2. open the testsolution.sln in a second instance of visual studio
 3. open the package manager console 
 4. [click the cog] create a local package feed pointing to the VSAutomate.Nuget folder
-5. > install-pckage VSAutomate
+5. > `install-package VSAutomate`
 
