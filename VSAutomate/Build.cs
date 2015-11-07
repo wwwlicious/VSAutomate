@@ -39,7 +39,7 @@ namespace VSAutomate
 #if DEBUG
                 Readme.Configure(solution, docsFolderPath);
                 GlobalAssemblyInfo.Configure(solution, companyName);
-                Stylecop.Configure(solution, buildFolderPath, companyName);
+                StylecopSettings.Configure(solution, buildFolderPath, companyName);
                 AnalysisRuleset.Configure(solution, buildFolderPath);
                 CustomDictionary.Configure(solution, buildFolderPath);
                 AppConfigTransform.Configure(solution, toolsPath);
@@ -48,7 +48,7 @@ namespace VSAutomate
                 var configTask = Task.Run(() => AppConfigTransform.Configure(solution, toolsPath));
                 var readMeTask = Task.Run(() => Readme.Configure(solution));
                 var assemblyinfoTask = Task.Run(() => GlobalAssemblyInfo.Configure(solution));
-                var stylecopTask = Task.Run(() => Stylecop.Configure(solution, SolutionFolders.BuildFolderPath));
+                var stylecopTask = Task.Run(() => StylecopSettings.Configure(solution, SolutionFolders.BuildFolderPath));
                 var fxcopTask = Task.Run(() => AnalysisRuleset.Configure(solution, SolutionFolders.BuildFolderPath));
                 var dictionaryTask = Task.Run(() => CustomDictionary.Configure(solution, SolutionFolders.BuildFolderPath));
 
